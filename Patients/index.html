@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lista de Pacientes</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Lista de Pacientes</h1>
+        <button onclick="abrirFormulario()">Novo Paciente</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Proprietário</th>
+                    <th>Espécie</th>
+                    <th>Sexo</th>
+                    <th>Idade</th>
+                    <th>Raça</th>
+                    <th>Pelagem</th>
+                    <th>Peso</th>
+                    <th>Endereço</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-pacientes">
+                <!-- A tabela será preenchida dinamicamente com JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="formulario" class="escondido">
+        <h2>Novo Paciente</h2>
+        <form onsubmit="adicionarPaciente(); return false;">
+            <!-- Campos do formulário -->
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+
+            <!-- Adicione os demais campos do paciente aqui -->
+
+            <button type="submit">Adicionar</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
