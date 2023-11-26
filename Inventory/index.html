@@ -1,40 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacientes</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Pacientes</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Raça</th>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.3.67/css/materialdesignicons.min.css" integrity="sha512-nRzny9w0V2Y1/APe+iEhKAwGAc+K8QYCw4vJek3zXhdn92HtKt226zHs9id8eUq+uYJKaH2gPyuLcaG/dE5c7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css" />
+
+<div class="pos-f-t">
+    <nav class="navbar background-white">
+      <button  style="margin-left:15px" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul class="navbar-nav ml-auto" style="flex-direction: row;">
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span class="mdi mdi-magnify"></span> <!-- Lens icon -->
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span class="mdi mdi-bell"></span> <!-- Notification icon -->
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span class="mdi mdi-account"></span> <!-- User icon -->
+          </a>
+        </li>
+      </ul>
+    </nav>
+</div>
+<div class="wrapper">
+    <div style="padding-top: 15px; background-color: #68443E !important; width:100px">
+        <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+          <li class="nav-item selected">
+            <a href="#"><span class="mdi mdi-application-outline"></span><br>Início</a>
+          </li>
+          <li>
+            <a href="#"><span class="mdi mdi-archive"></span><br>Estoque</a>
+          </li>
+          <li>
+            <a href="#"><span class="mdi mdi-application-outline"></span><br>Pacientes</a>
+          </li>
+          <li>
+            <a href="#"><span class="mdi mdi-application-outline"></span><br>Consultas</a>
+          </li>
+        </ul>
+    </div>
+    
+    <div class="container" style="padding: 30px">
+        <h1>Estoque</h1>
+        <hr>
+        <div class="row" style="justify-content: space-between;">
+            <div class="search-container">
+                <span class="mdi mdi-magnify search-icon"></span>
+                <input type="text" class="search-input" placeholder="Pesquisar">
+              </div>
+              <button class="search-button" onClick="abrirFormulario()">+ Novo produto</button>          
+        </div>
+        <div class="row" style="margin-top: 30px">
+            <table class="table table-background">
+                <thead>
+                  <tr>
+                    <th style="width: 20px;">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="selectAll">
+                        <label class="form-check-label" for="selectAll"></label>
+                      </div>
+                    </th>
+                    <th style="width: 50px;">Id</th>
                     <th>Nome</th>
-                    <th>Pelagem</th>
-                    <th>Peso</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody id="table-body">
-            </tbody>
-        </table>
-        <div class="form-container">
-            <h2>Novo Paciente</h2>
-            <form id="patient-form">
-                <input type="text" id="id" name="id" placeholder="Id" required>
-                <input type="text" id="breed" name="breed" placeholder="Raça" required>
-                <input type="text" id="name" name="name" placeholder="Nome" required>
-                <input type="text" id="coat" name="coat" placeholder="Pelagem" required>
-                <input type="number" id="weight" name="weight" placeholder="Peso" required>
-                <button type="submit">Cadastrar</button>
-            </form>
+                    <th>Classificação</th>
+                    <th>Validade</th>
+                    <th>Status</th>
+                    <th style="text-align: center;">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                  </tr>
+                </tbody>
+              </table>
         </div>
     </div>
-    <script src="script.js"></script>
-</body>
-</html>
+</div>
