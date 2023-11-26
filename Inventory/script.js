@@ -1,7 +1,0 @@
-function incluirProduto() {
-    
-}
-
-function abrirFormulario() {
-    
-}
