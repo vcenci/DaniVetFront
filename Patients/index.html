@@ -1,51 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes</title>
     <link rel="stylesheet" href="style.css">
-    <title>Lista de Pacientes</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
-    <div id="app">
-        <h1>Lista de Pacientes</h1>
-        <button onclick="abrirFormulario()">Novo Paciente</button>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Proprietário</th>
-                    <th>Espécie</th>
-                    <th>Sexo</th>
-                    <th>Idade</th>
-                    <th>Raça</th>
-                    <th>Pelagem</th>
-                    <th>Peso</th>
-                    <th>Endereço</th>
-                    <th>Telefone</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody id="tabela-pacientes">
-                <!-- A tabela será preenchida dinamicamente com JavaScript -->
-            </tbody>
-        </table>
+    <div class="container">
+        <div id="nav">
+            <div class="botao_esquerdo">
+                <button>
+                    <img src="menu.svg" alt="">
+                </button>
+            </div>
+            <div class="botoes_direito">
+                <button>
+                    <img src="notificacao.svg" alt="">
+                </button>
+                <button>
+                    <img src="login.svg" alt="">
+                </button>
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <a href="#">
+                <img src="inicio.png" alt="">
+                <h3>Inicio</h3>
+            </a>
+            <a href="#">
+                <img src="estoque.png" alt="">
+                <h3>Estoque</h3>
+            </a>
+            <a href="#">
+                <img src="paciente.png" alt="">
+                <h3>Pacientes</h3>
+            </a>
+            <a href="#">
+                <img src="consulta.png" alt="">
+                <h3>Consultas</h3>
+            </a>
+        </div>
+
+        <div id="content">
+            <h2>Pacientes</h2>
+
+            <div class="submenu">
+                <div>
+                    <input type="search" class="input_pesquisar" placeholder="Pesquisar">
+                </div>
+
+                <div>
+                    <button type="button" style="cursor: pointer;" href="#" id="pacienteBtn"><strong style="padding-right: 5px;">+</strong> Novo Paciente</button>
+                </div>
+            </div>
+
+            <div class="form_box esconder">
+                <form action="" method="get">
+                    <div class="div_form">
+                        <div>
+                            <input type="text" name="name" id="nome" placeholder="Nome">
+                            <input type="text" name="idade" placeholder="Idade">
+                            <input type="text" name="especie" placeholder="Espécie">
+                            <input type="text" name="raca" placeholder="Raça">
+                            <input type="text" name="pelagem" placeholder="Pelagem">
+                            <input type="text" name="peso" placeholder="Peso">
+                        </div>
+                        <div>
+                            <input type="text" name="proprietario" placeholder="Proprietário">
+                            <input type="text" name="endereco" placeholder="Endereço">
+                            <input type="text" name="telefone" placeholder="Telefone">
+                            <input type="email" name="email" placeholder="E-mail">
+                            <button type="submit">OK</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="table_box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Proprietário</th>
+                            <th scope="col">Espécie</th>
+                            <th scope="col">Sexo</th>
+                            <th scope="col">Idade</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0001</th>
+                            <td>Nala</td>
+                            <td>Bruna Chies</td>
+                            <td>Equino</td>
+                            <td>Fêmea</td>
+                            <td>7</td>
+                            <td><i class='bx bx-edit-alt bx-sm'></i><i class='bx bx-trash bx-sm'></i></td>
+                        </tr>
+                        <tr>
+                            <td>0002</th>
+                            <td>Nala</td>
+                            <td>Bruna Chies</td>
+                            <td>Equino</td>
+                            <td>Fêmea</td>
+                            <td>7</td>
+                            <td><i class='bx bx-edit-alt bx-sm'></i><i class='bx bx-trash bx-sm'></i></td>
+                        </tr>
+                        <tr>
+                            <td>0003</th>
+                            <td>Nala</td>
+                            <td>Bruna Chies</td>
+                            <td>Equino</td>
+                            <td>Fêmea</td>
+                            <td>7</td>
+                            <td><i class='bx bx-edit-alt bx-sm'></i><i class='bx bx-trash bx-sm'></i></td>
+                        </tr>
+                        <!--
+                        <?php
+                        foreach($items as $item) {
+                            echo '
+                            <tr>
+                                <td>$item['id']</th>
+                                <td>$item['nome']</td>
+                                <td>$item['proprietario']</td>
+                                <td>$item['especie']</td>
+                                <td>$item['sexo']</td>
+                                <td>$item['idade']</td>
+                                <td><i class='bx bx-edit-alt bx-sm'></i><i class='bx bx-trash bx-sm'></i></td>
+                            </tr>';
+                        }
+                        ?>
+                        -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-
-    <div id="formulario" class="escondido">
-        <h2>Novo Paciente</h2>
-        <form onsubmit="adicionarPaciente(); return false;">
-            <!-- Campos do formulário -->
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" required>
-
-            <!-- Adicione os demais campos do paciente aqui -->
-
-            <button type="submit">Adicionar</button>
-        </form>
-    </div>
-
-    <script src="script.js"></script>
 </body>
+<script src="script.js"></script>
+
 </html>
