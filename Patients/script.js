@@ -113,7 +113,6 @@ function salvar() {
         }
     }
 
-    //call api with fetch, then check response status
     if (obj.id == "") {
         fetch("http://127.0.0.1:8000/api/pacientes", {
             method: "POST",
@@ -149,7 +148,6 @@ function salvar() {
 function atualizaRacas() {
     let especieSelecionada = $("#especie").val();
     $("#raca").empty();
-    //iterate over especieParaRaca array
     let racas = especieParaRaca[especieSelecionada];
     for (var key in racas) {
         $("#raca").append(`<option value="${key}">${racas[key]}</option>`);
