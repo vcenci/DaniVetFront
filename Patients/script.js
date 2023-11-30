@@ -43,9 +43,9 @@ function initForm() {
     .then(response => {
         if (response.status == 200) {
             response.json().then(data => {
-                data.forEach(especies => {
-                    especies[especies.id] = especies.especie;
-                    $("#especie").append(`<option value="${especies.id}">${especies.especie}</option>`);
+                data.forEach(especie => {
+                    especies[especie.id] = especie.especie;
+                    $("#especie").append(`<option value="${especie.id}">${especie.especie}</option>`);
                 });
             });
         }
