@@ -12,7 +12,6 @@ function editar(id) {
     $("#nome").val(produto.nome);
     $("#classificacao").val(produto.id_classificacao);
     let dataValidade = new Date(produto.validade);
-    // format date to yyyy-mm-dd
     let mes = dataValidade.getMonth() + 1;
     mes = mes < 10 ? "0" + mes : mes;
     let dia = dataValidade.getDate();
@@ -67,11 +66,9 @@ function initForm() {
 }
 
 function clearForm() {
-    console.log("asdasdsa");
     $("#id").val("");
     $("#nome").val("");
     let dataAtual = new Date();
-    // format to yyyy-mm-dd
     let mes = dataAtual.getMonth() + 1;
     mes = mes < 10 ? "0" + mes : mes;
     let dia = dataAtual.getDate();
@@ -105,7 +102,6 @@ function salvar() {
         }
     }
 
-    //call api with fetch, then check response status
     if (obj.id == "") {
         fetch("http://127.0.0.1:8000/api/medicamentos", {
             method: "POST",
@@ -147,10 +143,8 @@ function listar() {
             table.empty();
             data.forEach(produto => {
                 produtos[produto.id] = produto;	
-                // get value from stats object
                 let statusProd = stats[produto.status];
                 let dataValidade = new Date(produto.validade);
-                // format date to yyyy-mm-dd
                 let mes = dataValidade.getMonth() + 1;
                 mes = mes < 10 ? "0" + mes : mes;
                 let dia = dataValidade.getDate();
